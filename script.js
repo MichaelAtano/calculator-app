@@ -8,17 +8,32 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach(function(button) {
 
    button.addEventListener("click", function() {
+if (button.textContent === "C") {
+    display.textContent = "0";
+    firstNumber = null;
+    secondNumber = null;
+    operator = null;
+    shouldResetDisplay = false;
 
-    if (button.textContent === "=") {
-        secondNumber = Number(display.textContent);
+    return;
+}
+   if (button.textContent === "=") {
+    secondNumber = Number(display.textContent);
 
-        if (operator === "+") {
-            display.textContent = firstNumber + secondNumber;
-        }
-
-        return;
+    if (operator === "+") {
+        display.textContent = firstNumber + secondNumber;
     }
 
+    if (operator === "-") {
+        display.textContent = firstNumber - secondNumber;
+    }
+if (operator === "×") {
+    display.textContent = firstNumber * secondNumber;
+}if (operator === "÷") {
+    display.textContent = firstNumber / secondNumber;
+}
+    return;
+}
     if (
         button.textContent === "+" ||
         button.textContent === "-" ||
@@ -34,7 +49,13 @@ buttons.forEach(function(button) {
 
         return;
     }
+if (button.textContent === ".") {
+    if (!display.textContent.includes(".")) {
+        display.textContent += ".";
+    }
 
+    return;
+}
     if (shouldResetDisplay) {
         display.textContent = button.textContent;
         shouldResetDisplay = false;
