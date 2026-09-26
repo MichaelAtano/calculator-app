@@ -31,6 +31,8 @@ body {
     border-radius: 10px;
 
     font-size: 32px;
+    font-weight: bold;
+    border: 2px solid #ccc;
 }
 
 .buttons {
@@ -46,5 +48,28 @@ button {
     border-radius: 10px;
 
     font-size: 20px;
+    font-weight: bold;
     cursor: pointer;
+}
+.clear {
+    background-color: #ff6b6b;
+    color: white;
+}
+.zero {
+    grid-column: span 2;
+}
+.operator {
+    background-color: #ffa500;
+    color: white;
+}
+.equals {
+    background-color: #4caf50;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+button:active {
+    transform: scale(0.95);
 }
