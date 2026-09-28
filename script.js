@@ -32,6 +32,7 @@ if (operator === "×") {
 }if (operator === "÷") {
     display.textContent = firstNumber / secondNumber;
 }
+shouldResetDisplay = true;
     return;
 }
     if (
@@ -131,6 +132,7 @@ if (event.key === "Enter") {
     if (operator === "÷") {
         display.textContent = firstNumber / secondNumber;
     }
+    shouldResetDisplay = true;
 }
 
 });
