@@ -128,7 +128,7 @@ if (event.key === ".") {
         display.textContent += ".";
     }
 }
-if (event.key === "Enter") {
+if (event.key === "Enter" || event.key === "=") {
     calculate();
     shouldResetDisplay = true;
 }
