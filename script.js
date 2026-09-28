@@ -3,6 +3,30 @@ let firstNumber = null;
 let operator = null;
 let secondNumber = null;
 let shouldResetDisplay = false;
+function calculate() {
+    secondNumber = Number(display.textContent);
+
+if (operator === "+") {
+    display.textContent = firstNumber + secondNumber;
+}
+
+if (operator === "-") {
+    display.textContent = firstNumber - secondNumber;
+}
+
+if (operator === "×") {
+    display.textContent = firstNumber * secondNumber;
+}
+
+if (operator === "÷") {
+    if (secondNumber === 0) {
+        display.textContent = "Error";
+    } else {
+        display.textContent = firstNumber / secondNumber;
+    }
+}
+
+}
 const buttons = document.querySelectorAll("button");
 
 buttons.forEach(function(button) {
@@ -18,27 +42,13 @@ if (button.textContent === "C") {
     return;
 }
    if (button.textContent === "=") {
-    secondNumber = Number(display.textContent);
+    calculate();
+    shouldResetDisplay = true;
 
-    if (operator === "+") {
-        display.textContent = firstNumber + secondNumber;
-    }
-
-    if (operator === "-") {
-        display.textContent = firstNumber - secondNumber;
-    }
-if (operator === "×") {
-    display.textContent = firstNumber * secondNumber;
-}if (operator === "÷") {
-    if (secondNumber === 0) {
-        display.textContent = "Error";
-    } else {
-        display.textContent = firstNumber / secondNumber;
-    }
-}
-shouldResetDisplay = true;
     return;
 }
+
+
     if (
         button.textContent === "+" ||
         button.textContent === "-" ||
@@ -119,27 +129,7 @@ if (event.key === ".") {
     }
 }
 if (event.key === "Enter") {
-    secondNumber = Number(display.textContent);
-
-    if (operator === "+") {
-        display.textContent = firstNumber + secondNumber;
-    }
-
-    if (operator === "-") {
-        display.textContent = firstNumber - secondNumber;
-    }
-
-    if (operator === "×") {
-        display.textContent = firstNumber * secondNumber;
-    }
-
-   if (operator === "÷") {
-    if (secondNumber === 0) {
-        display.textContent = "Error";
-    } else {
-        display.textContent = firstNumber / secondNumber;
-    }
-}
+    calculate();
     shouldResetDisplay = true;
 }
 
