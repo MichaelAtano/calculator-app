@@ -30,7 +30,11 @@ if (button.textContent === "C") {
 if (operator === "×") {
     display.textContent = firstNumber * secondNumber;
 }if (operator === "÷") {
-    display.textContent = firstNumber / secondNumber;
+    if (secondNumber === 0) {
+        display.textContent = "Error";
+    } else {
+        display.textContent = firstNumber / secondNumber;
+    }
 }
 shouldResetDisplay = true;
     return;
@@ -129,9 +133,13 @@ if (event.key === "Enter") {
         display.textContent = firstNumber * secondNumber;
     }
 
-    if (operator === "÷") {
+   if (operator === "÷") {
+    if (secondNumber === 0) {
+        display.textContent = "Error";
+    } else {
         display.textContent = firstNumber / secondNumber;
     }
+}
     shouldResetDisplay = true;
 }
 
