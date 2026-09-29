@@ -8,17 +8,11 @@ function calculate() {
 
 if (operator === "+") {
     display.textContent = firstNumber + secondNumber;
-}
-
-if (operator === "-") {
+} else if (operator === "-") {
     display.textContent = firstNumber - secondNumber;
-}
-
-if (operator === "×") {
+} else if (operator === "×") {
     display.textContent = firstNumber * secondNumber;
-}
-
-if (operator === "÷") {
+} else if (operator === "÷") {
     if (secondNumber === 0) {
         display.textContent = "Error";
     } else {
