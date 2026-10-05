@@ -4,6 +4,10 @@ A simple calculator web app built with HTML, CSS, and JavaScript.
 
 This project was created as part of my journey learning web development and building projects for my portfolio.
 
+## Live Demo
+
+[Try the calculator] https://michaelatano.github.io/calculator-app/
+
 ## Features
 
 - Addition, subtraction, multiplication, and division
